@@ -31,7 +31,7 @@ class EmployeeControllerTest {
     @BeforeAll
     public static void setUp() {
         contact = ContactFactory.buildContact("221069054@mycput.ac.za", "0727762597","0712345678");
-        employee = EmployeeFactory.buildEmployee(1,"Leonard", "Langa", contact);
+        employee = EmployeeFactory.buildEmployee(1L,"Leonard", "Langa", contact);
     }
 
     @Test

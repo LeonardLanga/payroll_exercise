@@ -1,9 +1,6 @@
 package za.ac.cput.service;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.Employee;
@@ -53,6 +50,13 @@ class EmployeeServiceTest {
         Employee updated = service.update(editedEmployee);
         assertNotNull(updated);
         System.out.println(updated);
+    }
+
+    @Test
+    @Order(4)
+//    @Disabled
+    public void delete(Long employeeNumber){
+        service.delete(employeeNumber);
     }
 
     @Test

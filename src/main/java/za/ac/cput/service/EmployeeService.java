@@ -39,10 +39,10 @@ public class EmployeeService implements IEmployeeService{
         return employeeRepository.save(employee);
     }
 
-//    @Override
-//    public boolean delete(Long aLong) {
-//        return false;
-//    }
+    @Override
+    public void delete(Long employeeNumber) {
+        employeeRepository.deleteById(employeeNumber);
+    }
 
     @Override
     public Set<Employee> getAll() {

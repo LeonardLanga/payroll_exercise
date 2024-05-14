@@ -1,9 +1,6 @@
 package za.ac.cput.service;
 
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.demography.Contact;
@@ -46,16 +43,15 @@ class ContactServiceTest {
         System.out.println(updated);
     }
 
-//    @Test
-//    @Order(4)
-//    void delete(){
-//        Contact toDelete = service.read(contact.getEmail());
-//        boolean deleted = service.delete(toDelete.getEmail());
-//        assertTrue(deleted);
-//    }
-
     @Test
     @Order(4)
+    @Disabled
+    void delete(String email){
+        service.delete(contact.getEmail());
+    }
+
+    @Test
+    @Order(5)
     void getAll() {
         System.out.println(service.getAll());
     }

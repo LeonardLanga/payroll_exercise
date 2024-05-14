@@ -33,24 +33,10 @@ public class ContactService implements IContactService{
         return contactRepository.save(contact);
     }
 
-//    @Override
-//    public boolean delete(String email) {
-//        Contact contactToDelete = read(email);
-//
-//        if (contactToDelete == null){
-//            return false;
-//        }else{
-//            contactRepository.deleteById(contactToDelete.getEmail());
-//            return true;
-//        }
-//
-////        if (contactRepository.existsById(email)) {
-////            contactRepository.deleteById(email);
-////            if (!contactRepository.existsById(email)) {
-////                return true;
-////            }
-////        }
-//    }
+    @Override
+    public void delete(String email) {
+        contactRepository.deleteById(email);
+    }
 
     @Override
     public Set<Contact> getAll() {

@@ -1,8 +1,6 @@
 package za.ac.cput.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import za.ac.cput.domain.demography.Contact;
 
 import java.util.Objects;
@@ -11,11 +9,12 @@ import java.util.Objects;
 public class Employee
 {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long employeeNumber;
     private String firstName;
     private String lastname;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = false)
     private Contact contact;
 
     protected Employee(){
